@@ -4,10 +4,10 @@ import {
   Icon,
   Divider,
   Container,
-  Table,
-  TableCell,
   Button
 } from "semantic-ui-react";
+
+import TablaAlumnos from "./component/alumnos/TablaAlumnos";
 
 class App extends Component {
   render() {
@@ -18,51 +18,15 @@ class App extends Component {
           <Header.Content>EscuelaAPP</Header.Content>
         </Header>
         <Divider />
-        <Container>
-          <Table fixed>
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell>Nombre</Table.HeaderCell>
-                <Table.HeaderCell>Edad</Table.HeaderCell>
-                <Table.HeaderCell>Curso Actual</Table.HeaderCell>
-                <Table.HeaderCell>Acciones</Table.HeaderCell>
-              </Table.Row>
-            </Table.Header>
-
-            <Table.Body>
-              <Table.Row>
-                <Table.Cell>John</Table.Cell>
-                <Table.Cell>22</Table.Cell>
-                <Table.Cell>Grado de desarrollo de Aplicaciones Web</Table.Cell>
-                <Table.Cell>
-                  <Button animated>
-                    <Button.Content visible>
-                      <Icon name="eye" />
-                    </Button.Content>
-                    <Button.Content hidden>
-                      <Icon name="arrow right" />
-                    </Button.Content>
-                  </Button>
-                  <Button color="green" animated>
-                    <Button.Content visible>
-                      <Icon name="pencil" />
-                    </Button.Content>
-                    <Button.Content hidden>
-                      <Icon name="arrow right" />
-                    </Button.Content>
-                  </Button>
-                  <Button color="red" animated>
-                    <Button.Content visible>
-                      <Icon name="trash" />
-                    </Button.Content>
-                    <Button.Content hidden>
-                      <Icon name="arrow right" />
-                    </Button.Content>
-                  </Button>
-                </Table.Cell>
-              </Table.Row>
-            </Table.Body>
-          </Table>
+        <Container textAlign="center">
+          <TablaAlumnos />
+          <Button.Group>
+            <Button color="blue" positive>
+              Alumnos
+            </Button>
+            <Button.Or text="" />
+            <Button color="blue">Profesorado</Button>
+          </Button.Group>
         </Container>
       </div>
     );
